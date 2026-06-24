@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Portal ASTRO</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin:0;
+  font-family: "Segoe UI", Arial;
+  background:#f4f6f8;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width:260px;
+  background:#1b5e20;
+  color:white;
+  height:100vh;
+  position:fixed;
+  padding:20px;
+}
+
+.sidebar h2 {
+  margin-bottom:25px;
+}
+
+.sidebar div {
+  margin:12px 0;
+  cursor:pointer;
+  padding:8px;
+  border-radius:5px;
+}
+
+.sidebar div:hover {
+  background:#2e7d32;
+}
+
+/* MAIN */
+.main {
+  margin-left:260px;
+}
+
+/* HEADER */
+.header {
+  background:white;
+  padding:15px;
+  border-bottom:1px solid #ddd;
+}
+
+/* CONTENT */
+.content {
+  max-width:1000px;
+  margin:auto;
+  padding:30px;
+}
+
+/* SECCIONES */
+.section {
+  display:none;
+}
+.active {
+  display:block;
+}
+
+/* BLOQUES */
+.card {
+  background:white;
+  padding:20px;
+  margin:15px 0;
+  border-radius:10px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* BOTONES */
+.btn{
+    background:#fff;
+    padding:16px 20px;
+    margin:12px 0;
+    border-radius:12px;
+    cursor:pointer;
+    border-left:5px solid #1b5e20;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+    transition:.25s;
+    font-weight:500;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 16px rgba(0,0,0,.12);
+    background:#fafafa;
+}
+
+.volver{
+    margin-top:30px;
+    border-left:5px solid #666;
+}
+
+/* PASOS */
+.step {
+  background:white;
+  padding:15px;
+  margin:15px 0;
+  border-radius:8px;
+  border-left:5px solid #43a047;
+}
+
+p {
+  text-align: justify;
+  line-height: 1.6;
+}
+
+li {
+  text-align: justify;
+  margin-bottom: 5px;
+}
+
+/* IMÁGENES */
+img {
+  max-width:100%;
+  border-radius:8px;
+  margin:10px 0 20px 0;
+}
+</style>
+
+<script>
+function go(id){
+  document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+}
+</script>
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+<h2>ASTRO</h2>
+
+<div onclick="go('inicio')">Inicio</div>
+<div onclick="go('nueva')">Nueva solicitud</div>
+<div onclick="go('mis')">Mis solicitudes</div>
+<div onclick="go('consulta')">Consulta tu Proveedor</div>
+<div onclick="go('aprobaciones')">Mis aprobaciones</div>
+</div>
+
+<div class="main">
+
+<!-- HEADER -->
+<div class="header">
+<img src="img/Imagen.png" alt="Imagen">
+</div>
+
+<div class="content">
+
+<!-- INICIO -->
+<div id="inicio" class="section active">
+
+<div class="card">
+<h2>Introducción</h2>
+<p>ASTRO es una plataforma diseñada para centralizar y optimizar la administración de proveedores, en línea con la visión del banco de “Simplificar y disfrutar más la vida”, permitiendo una gestión más ágil, trazable y estandarizada de los procesos asociados. A través de este portal, los usuarios pueden acceder a una estructura organizada en cuatro módulos principales: Nueva Solicitud, donde se ingresan requerimientos de proveedores mediante distintas tipologías definidas; Mis Solicitudes, que permite visualizar y hacer seguimiento al estado de las solicitudes realizadas; Consulta tu proveedor, orientado a la búsqueda y revisión de información de proveedores a través de datos como nombre o RUT; y Aprobaciones, destinado a usuarios con rol aprobador para gestionar solicitudes pendientes, ya sea aprobándolas o rechazándolas. En particular, el módulo de Nueva Solicitud contempla diversas tipologías asociadas a los distintos tipos de requerimientos, cada una con su respectivo flujo y manual específico disponible dentro del portal, lo que permite adaptar el proceso según la naturaleza de la solicitud y asegurar una gestión consistente y guiada en cada caso. De esta manera, el portal facilita el control, seguimiento y toma de decisiones, mejorando la experiencia del usuario y fortaleciendo la gestión integral de proveedores.
+
+<h2>Beneficios de ASTRO</h2>
+<ul>
+<li>Centralización de la información de proveedores en una única plataforma.
+<li>Mejora en la trazabilidad y seguimiento de las solicitudes.
+<li>Estandarización de los procesos de gestión de proveedores.
+<li>Disminución de errores al contar con flujos guiados por tipología.
+<li>Acceso rápido y sencillo a la información de proveedores.
+<li>Mayor control en los procesos de aprobación y toma de decisiones.
+<li>Optimización de tiempos en la gestión de solicitudes.
+<li>Mejora en la experiencia del usuario mediante una navegación clara y estructurada.
+<ul>
+</div>
+
+<div class="card">
+<h3>Equipos participantes</h3>
+<ul>
+<li>Gerencia De Etica Gobernanza y Cumplimiento</li>
+<li>Gerencia de Asuntos Legales y Gobernanza</li>
+<li>Gerencia Prevención de Lavado de Activo</li>
+<li>Gerencia Riesgo Operacional y Control Interno</li>
+<li>Gerencia de Control Contable e Información Financiera</li>
+</ul>
+</div>
+
+<div class="card">
+
+<h2>Página de Inicio</h2>
+
+<p>
+La siguiente pantalla corresponde al inicio de la plataforma, desde donde el usuario puede acceder a las distintas funcionalidades disponibles.
+</p>
+<div class="header">
+<img src="img/Imagen1.png" alt="Imagen1">
+</div>
+<p>
+En la sección central se encuentra el bloque <b>“¿Qué necesitas hacer hoy?”</b>, el cual presenta un menú con las principales acciones que el usuario puede realizar, tales como:
+</p>
+
+<ul>
+<li>Nueva solicitud</li>
+<li>Mis solicitudes</li>
+<li>Consulta de terceros</li>
+<li>Mis aprobaciones</li>
+</ul>
+
+<p>
+Es importante señalar que al seleccionar cualquiera de estas opciones desde este menú, se ejecuta la misma acción que al abrir el menú lateral izquierdo y elegir la funcionalidad correspondiente. Es decir, ambos accesos son equivalentes y permiten navegar de manera indistinta dentro de la plataforma.
+</p>
+
+<p>
+Por otra parte, en el panel derecho se encuentra la sección <b>“¿Qué puedes hacer aquí?”</b>, la cual cumple una función informativa.
+</p>
+
+<p>
+Este bloque irá cambiando dinámicamente según la opción seleccionada, entregando una breve explicación de la funcionalidad elegida y orientando al usuario sobre las acciones que puede realizar y los pasos a seguir.
+</p>
+
+<p>
+Esta pantalla tiene como objetivo facilitar la navegación, permitiendo al usuario acceder de forma rápida a las distintas funcionalidades y comprender de manera guiada cada proceso dentro de la plataforma.
+</p>
+
+</div>
+
+</div>
+
+<!-- NUEVA SOLICITUD -->
+<div id="nueva" class="section">
+
+<!-- TEXTO EXPLICATIVO -->
+<div class="card">
+<h2>Paso a Paso “Nueva Solicitud”</h2>
+</div>
+
+<!-- PASO 1 -->
+<div class="card">
+<h3>Paso 1: Selección de acción</h3>
+
+<p>
+Al ingresar al portal, el usuario deberá seleccionar la acción que desea realizar desde la sección “¿Qué necesitas hacer hoy?”. 
+</p>
+
+<p>
+Entre las opciones disponibles se encuentran: “Nueva solicitud”, que permite crear una nueva solicitud; “Mis solicitudes”, para revisar el estado de las solicitudes ingresadas; “Mis aprobaciones”, donde se visualizan las solicitudes pendientes de aprobación; y “Consulta de terceros”, que permite revisar el estado y los datos principales de los proveedores registrados
+</p>
+</div>
+
+<!-- PASO 2 -->
+<div class="card">
+<h3>Paso 2: Selección de servicio</h3>
+
+<p>
+Al seleccionar la opción “Nueva solicitud”, el usuario accederá al catálogo de solicitudes, donde se presentan las distintas tipologías disponibles para la creación de una solicitud.
+</p>
+<p>
+En esta vista, las tipologías se encuentran organizadas en dos grandes grupos: 
+<b>Proveedores</b> y <b>Otros / Terceros</b>.
+Cada categoría contiene distintos tipos de servicios, los cuales se presentan en formato de tarjetas que incluyen una breve descripción y la opción de visualizar más detalle.
+</p>
+<img src="img/Imagen4.png" alt="Imagen4">
+<p>
+Adiconalmente, la plataforma permite buscar mediante:
+</p>
+
+<ul>
+<li>Barra de búsqueda</li>
+<li>Filtros por categoría</li>
+</ul>
+
+<p>
+Esto permite encontrar la tipología adecuada según el requerimiento.
+</p>
+<img src="img/Imagen2.png" alt="Imagen2">
+</div>
+
+<!-- PASO 3 -->
+<div class="card">
+<h3>Paso 3: Catálogo de solicitudes / Tipologías</h3>
+
+<p>
+Al seleccionar la opción “Nueva solicitud”, el usuario accederá al catálogo de solicitudes, donde se presentan las distintas tipologías disponibles para la creación de una solicitud.
+</p>
+
+<p>
+Incluye una sección llamada <b>“¿Cómo identificar la tipología correcta?”</b>,
+que entrega criterios como:
+</p>
+<img src="img/Imagen3.png" alt="Imagen3">
+<ul>
+<li>Tipo de relación con el tercero</li>
+<li>Naturaleza del servicio</li>
+<li>Complejidad</li>
+<li>Nivel de dependencia</li>
+</ul>
+
+<p>
+Esto permite seleccionar correctamente la tipología antes de iniciar la solicitud.
+</p>
+
+<p>
+Por otra parte, la plataforma permite facilitar la búsqueda de la tipología adecuada mediante funcionalidades de filtrado y búsqueda. El usuario puede utilizar la barra de búsqueda para ingresar el nombre de un servicio específico, así como también aplicar filtros por categoría (todos, proveedores u otros/terceros), lo que permite encontrar de manera más rápida y precisa la opción que mejor se ajuste a su requerimiento.
+</p>
+
+<p>
+Esta sección tiene como objetivo guiar al usuario en la correcta selección del tipo de solicitud, asegurando que el proceso, la documentación requerida y los niveles de aprobación se ajusten a la naturaleza del servicio o relación que se desea gestionar.
+</p>
+</div>
+
+
+<!-- ✅ PREGUNTA (ANTES DE LOS BOTONES) -->
+<div class="card">
+<p><b>¿Qué tipo de solicitud quieres crear?</b></p>
+</div>
+
+<!-- ✅ BOTONES -->
+<div class="btn" onclick="go('proveedores')">Proveedores</div>
+<div class="btn" onclick="go('terceros')">Otros / Terceros</div>
+
+<!-- ✅ BOTÓN VOLVER -->
+<div class="btn" onclick="go('inicio')">← Volver</div>
+
+
+</div>
+
+<!-- PROVEEDORES -->
+<div id="proveedores" class="section">
+
+<h2>Tipologías de Proveedores</h2>
+
+<div class="btn" onclick="go('t1')">Servicio Externalizado</div>
+<div class="btn" onclick="go('t2')">Proveedores de Infraestructura</div>
+<div class="btn" onclick="go('t3')">Proveedores de Bienes</div>
+<div class="btn" onclick="go('t4')">Servicio Externalizado de Apoyo</div>
+<div class="btn" onclick="go('t5')">Servicio Externalizado Giro Exclusivo</div>
+<div class="btn" onclick="go('t6')">Servicio Básico</div>
+<div class="btn volver" onclick="go('nueva')">
+← Volver
+</div>
+
+</div>
+
+
+<!-- TIPOLOGIA 1 -->
+<div id="t1" class="section">
+
+<h2>Servicio Externalizado</h2>
+
+<div class="step">Paso 1: Completar datos</div>
+<p>
+En esta pantalla se deben completar los datos solicitados en la sección “Detalles de la prestación”. Es obligatorio ingresar toda la información requerida, ya que de lo contrario no será posible avanzar a la siguiente etapa del proceso.
+<img src="img/Imagen6.png" alt="Imagen6">
+</p>
+
+<p>
+Se debe indicar si es dueño del servicio solicitado, seleccionar la o las sociedades en las que el servicio es requerido, elegir el tipo de servicio según clasificación CMF, ingresar una descripción que detalle el alcance y objetivos del servicio, y definir el monto asociado al contrato. Una vez completados estos campos, se habilita el avance hacia la siguiente etapa.
+</p>
+
+<div class="step">Paso 2: Selección y validación del proveedor</div>
+<p>
+Al avanzar, se deberá ingresar el RUT del proveedor. En caso de que el proveedor no se encuentre registrado, se deberá seleccionar la opción de agregar (+), lo que permitirá crear un nuevo proveedor. Si el proveedor ya existe, se podrá buscar por nombre o RUT, seleccionarlo y continuar con el proceso.
+<img src="img/Imagen7.png" alt="Imagen7">
+</p>
+
+<p>
+Y al seleccionarlo se informará si el proveedor mantiene Due Diligence vigente o no:
+</p>
+<img src="img/Imagen8.png" alt="Imagen8">
+<p>
+Y al seleccionarlo aparecerá de la siguiente forma:
+</p>
+<img src="img/Imagen9.png" alt="Imagen9">
+<p>
+Posteriormente, se deberán responder las preguntas asociadas a la evaluación de riesgo operacional.
+</p>
+<img src="img/Imagen10.png" alt="Imagen10">
+<p>
+Luego de esto al presionar continuar aparecerá la siguiente pestaña, para indicar que el proceso debe pasar por la revisión de R. O
+</p>
+<img src="img/Imagen11.png" alt="Imagen11">
+
+<div class="step">Paso 3: Carga de Documentos</div>
+<p>
+En esta etapa se realiza la carga de los documentos requeridos para la solicitud, los cuales se encuentran organizados por equipo, facilitando la identificación de las responsabilidades asociadas a cada área.
+</p>
+
+<p>
+Cada documento cuenta con una etiqueta que indica su carácter: obligatorio, opcional o condicional. Los documentos condicionales se habilitarán únicamente cuando apliquen según las características del requerimiento ingresado.
+</p>
+<p>
+La correcta carga de la documentación requerida permitirá continuar con el flujo de la solicitud.
+</p>
+
+<img src="img/Imagen12.png" alt="Imagen12">
+
+<div class="step">Paso 4: Validación de Areas</div>
+<p>
+En esta etapa se realiza la carga de los documentos requeridos para la solicitud, los cuales se encuentran organizados por equipo, facilitando la identificación de las responsabilidades asociadas a cada área.
+</p>
+
+<p>
+Cada documento cuenta con una etiqueta que indica su carácter: obligatorio, opcional o condicional. Los documentos condicionales se habilitarán únicamente cuando apliquen según las características del requerimiento ingresado.
+</p>
+
+<p>
+La correcta carga de la documentación requerida permitirá continuar con el flujo de la solicitud.
+</p>
+<img src="img/Imagen13.png" alt="Imagen13">
+
+
+<!-- BOTÓN VOLVER -->
+<div class="btn" onclick="go('proveedores')">← Volver</div>
+
+</div>
+<!-- TIPOLOGIA 2 -->
+<div id="t2" class="section">
+
+<h2>Proveedores de Infraestructura</h2>
+
+<div class="step">Paso 1: Completar datos</div>
+<p>
+En esta pantalla se deben completar los datos solicitados en la sección “Detalles de la prestación”. Es obligatorio ingresar toda la información requerida, ya que de lo contrario no será posible avanzar a la siguiente etapa del proceso.
+<img src="img/Imagen17.png" alt="Imagen17">
+</p>
+
+<p>
+Se debe indicar si es dueño del servicio solicitado, seleccionar la o las sociedades en las que el servicio es requerido, elegir el tipo de servicio según clasificación CMF, ingresar una descripción que detalle el alcance y objetivos del servicio, y definir el monto asociado al contrato. Una vez completados estos campos, se habilita el avance hacia la siguiente etapa.
+</p>
+
+<div class="step">Paso 2: Selección y validación del proveedor</div>
+<p>
+Al avanzar, se deberá ingresar el RUT del proveedor. En caso de que el proveedor no se encuentre registrado, se deberá seleccionar la opción de agregar (+), lo que permitirá crear un nuevo proveedor. Si el proveedor ya existe, se podrá buscar por nombre o RUT, seleccionarlo y continuar con el proceso.
+<img src="img/Imagen7.png" alt="Imagen7">
+</p>
+
+<p>
+Y al seleccionarlo se informará si el proveedor mantiene Due Diligence vigente o no:
+</p>
+<img src="img/Imagen8.png" alt="Imagen8">
+<p>
+Y al seleccionarlo aparecerá de la siguiente forma:
+</p>
+<img src="img/Imagen9.png" alt="Imagen9">
+<p>
+Posteriormente, se deberán responder las preguntas asociadas a la evaluación de riesgo operacional.
+</p>
+<img src="img/Imagen10.png" alt="Imagen10">
+<p>
+Luego de esto al presionar continuar aparecerá la siguiente pestaña, para indicar que el proceso debe pasar por la revisión de R. O
+</p>
+<img src="img/Imagen11.png" alt="Imagen11">
+
+<div class="step">Paso 3: Carga de Documentos</div>
+<p>
+En esta etapa se realiza la carga de los documentos requeridos para la solicitud, los cuales se encuentran organizados por equipo, facilitando la identificación de las responsabilidades asociadas a cada área.
+</p>
+
+<p>
+Cada documento cuenta con una etiqueta que indica su carácter: obligatorio, opcional o condicional. Los documentos condicionales se habilitarán únicamente cuando apliquen según las características del requerimiento ingresado.
+</p>
+<p>
+La correcta carga de la documentación requerida permitirá continuar con el flujo de la solicitud.
+</p>
+
+<img src="img/Imagen12.png" alt="Imagen12">
+
+<div class="step">Paso 4: Validación de Areas</div>
+<p>
+En esta etapa se realiza la carga de los documentos requeridos para la solicitud, los cuales se encuentran organizados por equipo, facilitando la identificación de las responsabilidades asociadas a cada área.
+</p>
+
+<p>
+Cada documento cuenta con una etiqueta que indica su carácter: obligatorio, opcional o condicional. Los documentos condicionales se habilitarán únicamente cuando apliquen según las características del requerimiento ingresado.
+</p>
+
+<p>
+La correcta carga de la documentación requerida permitirá continuar con el flujo de la solicitud.
+</p>
+<img src="img/Imagen13.png" alt="Imagen13">
+
+
+<!-- BOTÓN VOLVER -->
+<div class="btn" onclick="go('proveedores')">← Volver</div>
+
+</div>
+
+<!-- TIPOLOGIA 3 -->
+<div id="t3" class="section">
+
+<h2>Proveedores de Bienes</h2>
+
+<div class="step">Paso 1: Completar datos</div>
+<p>
+En esta pantalla se deben completar los datos solicitados en la sección “Detalles de la prestación”. Es obligatorio ingresar toda la información requerida, ya que de lo contrario no será posible avanzar a la siguiente etapa del proceso.
+<img src="img/Imagen20.png" alt="Imagen20">
+</p>
+
+<p>
+Se debe indicar si es dueño del servicio solicitado, seleccionar la o las sociedades en las que el servicio es requerido, elegir el tipo de servicio según clasificación CMF, ingresar una descripción que detalle el alcance y objetivos del servicio, y definir el monto asociado al contrato. Una vez completados estos campos, se habilita el avance hacia la siguiente etapa.
+</p>
+
+<div class="step">Paso 2: Selección y validación del proveedor</div>
+<p>
+Al avanzar, se deberá ingresar el RUT del proveedor. En caso de que el proveedor no se encuentre registrado, se deberá seleccionar la opción de agregar (+), lo que permitirá crear un nuevo proveedor. Si el proveedor ya existe, se podrá buscar por nombre o RUT, seleccionarlo y continuar con el proceso.
+<img src="img/Imagen7.png" alt="Imagen7">
+</p>
+
+<p>
+Y al seleccionarlo se informará si el proveedor mantiene Due Diligence vigente o no:
+</p>
+<img src="img/Imagen8.png" alt="Imagen8">
+<p>
+Y al seleccionarlo aparecerá de la siguiente forma:
+</p>
+<img src="img/Imagen9.png" alt="Imagen9">
+<p>
+Posteriormente, se deberán responder las preguntas asociadas a la evaluación de riesgo operacional.
+</p>
+<img src="img/Imagen10.png" alt="Imagen10">
+<p>
+Luego de esto al presionar continuar aparecerá la siguiente pestaña, para indicar que el proceso debe pasar por la revisión de R. O
+</p>
+<img src="img/Imagen11.png" alt="Imagen11">
+
+<div class="step">Paso 3: Carga de Documentos</div>
+<p>
+En esta etapa se realiza la carga de los documentos requeridos para la solicitud, los cuales se encuentran organizados por equipo, facilitando la identificación de las responsabilidades asociadas a cada área.
+</p>
+
+<p>
+Cada documento cuenta con una etiqueta que indica su carácter: obligatorio, opcional o condicional. Los documentos condicionales se habilitarán únicamente cuando apliquen según las características del requerimiento ingresado.
+</p>
+<p>
+La correcta carga de la documentación requerida permitirá continuar con el flujo de la solicitud.
+</p>
+
+<img src="img/Imagen12.png" alt="Imagen12">
+
+<div class="step">Paso 4: Validación de Areas</div>
+<p>
+En esta etapa se realiza la carga de los documentos requeridos para la solicitud, los cuales se encuentran organizados por equipo, facilitando la identificación de las responsabilidades asociadas a cada área.
+</p>
+
+<p>
+Cada documento cuenta con una etiqueta que indica su carácter: obligatorio, opcional o condicional. Los documentos condicionales se habilitarán únicamente cuando apliquen según las características del requerimiento ingresado.
+</p>
+
+<p>
+La correcta carga de la documentación requerida permitirá continuar con el flujo de la solicitud.
+</p>
+<img src="img/Imagen13.png" alt="Imagen13">
+
+
+<!-- BOTÓN VOLVER -->
+<div class="btn" onclick="go('proveedores')">← Volver</div>
+
+</div>
+
+<!-- TIPOLOGIA 4 -->
+<div id="t4" class="section">
+
+<h2>Servicio Externalizado de Apoyo</h2>
+
+<div class="step">Paso 1: Completar datos</div>
+<p>
+En esta pantalla se deben completar los datos solicitados en la sección “Detalles de la prestación”. Es obligatorio ingresar toda la información requerida, ya que de lo contrario no será posible avanzar a la siguiente etapa del proceso.
+<img src="img/Imagen23.png" alt="Imagen23">
+</p>
+
+<p>
+Se debe indicar si es dueño del servicio solicitado, seleccionar la o las sociedades en las que el servicio es requerido, elegir el tipo de servicio según clasificación CMF, ingresar una descripción que detalle el alcance y objetivos del servicio, y definir el monto asociado al contrato. Una vez completados estos campos, se habilita el avance hacia la siguiente etapa.
+</p>
+
+<div class="step">Paso 2: Selección y validación del proveedor</div>
+<p>
+Al avanzar, se deberá ingresar el RUT del proveedor. En caso de que el proveedor no se encuentre registrado, se deberá seleccionar la opción de agregar (+), lo que permitirá crear un nuevo proveedor. Si el proveedor ya existe, se podrá buscar por nombre o RUT, seleccionarlo y continuar con el proceso.
+<img src="img/Imagen7.png" alt="Imagen7">
+</p>
+
+<p>
+Y al seleccionarlo se informará si el proveedor mantiene Due Diligence vigente o no:
+</p>
+<img src="img/Imagen8.png" alt="Imagen8">
+<p>
+Y al seleccionarlo aparecerá de la siguiente forma:
+</p>
+<img src="img/Imagen9.png" alt="Imagen9">
+<p>
+Posteriormente, se deberán responder las preguntas asociadas a la evaluación de riesgo operacional.
+</p>
+<img src="img/Imagen10.png" alt="Imagen10">
+<p>
+Luego de esto al presionar continuar aparecerá la siguiente pestaña, para indicar que el proceso debe pasar por la revisión de R. O
+</p>
+<img src="img/Imagen11.png" alt="Imagen11">
+
+<div class="step">Paso 3: Carga de Documentos</div>
+<p>
+En esta etapa se realiza la carga de los documentos requeridos para la solicitud, los cuales se encuentran organizados por equipo, facilitando la identificación de las responsabilidades asociadas a cada área.
+</p>
+
+<p>
+Cada documento cuenta con una etiqueta que indica su carácter: obligatorio, opcional o condicional. Los documentos condicionales se habilitarán únicamente cuando apliquen según las características del requerimiento ingresado.
+</p>
+<p>
+La correcta carga de la documentación requerida permitirá continuar con el flujo de la solicitud.
+</p>
+
+<img src="img/Imagen12.png" alt="Imagen12">
+
+<div class="step">Paso 4: Validación de Areas</div>
+<p>
+En esta etapa se realiza la carga de los documentos requeridos para la solicitud, los cuales se encuentran organizados por equipo, facilitando la identificación de las responsabilidades asociadas a cada área.
+</p>
+
+<p>
+Cada documento cuenta con una etiqueta que indica su carácter: obligatorio, opcional o condicional. Los documentos condicionales se habilitarán únicamente cuando apliquen según las características del requerimiento ingresado.
+</p>
+
+<p>
+La correcta carga de la documentación requerida permitirá continuar con el flujo de la solicitud.
+</p>
+<img src="img/Imagen13.png" alt="Imagen13">
+
+
+<!-- BOTÓN VOLVER -->
+<div class="btn" 
+onclick="go('proveedores')">← Volver</div>
+
+</div>
+
+<!-- TIPOLOGIA 5 -->
+<div id="t5" class="section">
+
+<h2>Servicio Externalizado Giro Exclusivo</h2>
+
+<div class="step">Paso 1: Completar datos</div>
+<p>
+En esta pantalla se deben completar los datos solicitados en la sección “Detalles de la prestación”. Es obligatorio ingresar toda la información requerida, ya que de lo contrario no será posible avanzar a la siguiente etapa del proceso.
+<img src="img/Imagen26.png" alt="Imagen26">
+</p>
+
+<p>
+Se debe indicar si es dueño del servicio solicitado, seleccionar la o las sociedades en las que el servicio es requerido, elegir el tipo de servicio según clasificación CMF, ingresar una descripción que detalle el alcance y objetivos del servicio, y definir el monto asociado al contrato. Una vez completados estos campos, se habilita el avance hacia la siguiente etapa.
+</p>
+
+<div class="step">Paso 2: Selección y validación del proveedor</div>
+<p>
+Al avanzar, se deberá ingresar el RUT del proveedor. En caso de que el proveedor no se encuentre registrado, se deberá seleccionar la opción de agregar (+), lo que permitirá crear un nuevo proveedor. Si el proveedor ya existe, se podrá buscar por nombre o RUT, seleccionarlo y continuar con el proceso.
+<img src="img/Imagen7.png" alt="Imagen7">
+</p>
+
+<p>
+Y al seleccionarlo se informará si el proveedor mantiene Due Diligence vigente o no:
+</p>
+<img src="img/Imagen8.png" alt="Imagen8">
+<p>
+Y al seleccionarlo aparecerá de la siguiente forma:
+</p>
+<img src="img/Imagen9.png" alt="Imagen9">
+<p>
+Posteriormente, se deberán responder las preguntas asociadas a la evaluación de riesgo operacional.
+</p>
+<img src="img/Imagen10.png" alt="Imagen10">
+<p>
+Luego de esto al presionar continuar aparecerá la siguiente pestaña, para indicar que el proceso debe pasar por la revisión de R. O
+</p>
+<img src="img/Imagen11.png" alt="Imagen11">
+
+<div class="step">Paso 3: Carga de Documentos</div>
+<p>
+En esta etapa se realiza la carga de los documentos requeridos para la solicitud, los cuales se encuentran organizados por equipo, facilitando la identificación de las responsabilidades asociadas a cada área.
+</p>
+
+<p>
+Cada documento cuenta con una etiqueta que indica su carácter: obligatorio, opcional o condicional. Los documentos condicionales se habilitarán únicamente cuando apliquen según las características del requerimiento ingresado.
+</p>
+<p>
+La correcta carga de la documentación requerida permitirá continuar con el flujo de la solicitud.
+</p>
+
+<img src="img/Imagen12.png" alt="Imagen12">
+
+<div class="step">Paso 4: Validación de Areas</div>
+<p>
+En esta etapa se realiza la carga de los documentos requeridos para la solicitud, los cuales se encuentran organizados por equipo, facilitando la identificación de las responsabilidades asociadas a cada área.
+</p>
+
+<p>
+Cada documento cuenta con una etiqueta que indica su carácter: obligatorio, opcional o condicional. Los documentos condicionales se habilitarán únicamente cuando apliquen según las características del requerimiento ingresado.
+</p>
+
+<p>
+La correcta carga de la documentación requerida permitirá continuar con el flujo de la solicitud.
+</p>
+<img src="img/Imagen13.png" alt="Imagen13">
+
+
+<!-- BOTÓN VOLVER -->
+<div class="btn" 
+onclick="go('proveedores')">← Volver</div>
+
+</div>
+
+<!-- TIPOLOGIA 6 -->
+<div id="t6" class="section">
+
+<h2>Servicio Básico</h2>
+
+<div class="step">Paso 1: Completar datos</div>
+<p>
+En esta pantalla se deben completar los datos solicitados en la sección “Detalles de la prestación”. Es obligatorio ingresar toda la información requerida, ya que de lo contrario no será posible avanzar a la siguiente etapa del proceso.
+<img src="img/Imagen29.png" alt="Imagen29">
+</p>
+
+<p>
+Se debe indicar si es dueño del servicio solicitado, seleccionar la o las sociedades en las que el servicio es requerido, elegir el tipo de servicio según clasificación CMF, ingresar una descripción que detalle el alcance y objetivos del servicio, y definir el monto asociado al contrato. Una vez completados estos campos, se habilita el avance hacia la siguiente etapa.
+</p>
+
+<div class="step">Paso 2: Selección y validación del proveedor</div>
+<p>
+Al avanzar, se deberá ingresar el RUT del proveedor. En caso de que el proveedor no se encuentre registrado, se deberá seleccionar la opción de agregar (+), lo que permitirá crear un nuevo proveedor. Si el proveedor ya existe, se podrá buscar por nombre o RUT, seleccionarlo y continuar con el proceso.
+<img src="img/Imagen7.png" alt="Imagen7">
+</p>
+
+<p>
+Y al seleccionarlo se informará si el proveedor mantiene Due Diligence vigente o no:
+</p>
+<img src="img/Imagen8.png" alt="Imagen8">
+<p>
+Y al seleccionarlo aparecerá de la siguiente forma:
+</p>
+<img src="img/Imagen9.png" alt="Imagen9">
+<p>
+Posteriormente, se deberán responder las preguntas asociadas a la evaluación de riesgo operacional.
+</p>
+<img src="img/Imagen10.png" alt="Imagen10">
+<p>
+Luego de esto al presionar continuar aparecerá la siguiente pestaña, para indicar que el proceso debe pasar por la revisión de R. O
+</p>
+<img src="img/Imagen11.png" alt="Imagen11">
+
+<div class="step">Paso 3: Carga de Documentos</div>
+<p>
+En esta etapa se realiza la carga de los documentos requeridos para la solicitud, los cuales se encuentran organizados por equipo, facilitando la identificación de las responsabilidades asociadas a cada área.
+</p>
+
+<p>
+Cada documento cuenta con una etiqueta que indica su carácter: obligatorio, opcional o condicional. Los documentos condicionales se habilitarán únicamente cuando apliquen según las características del requerimiento ingresado.
+</p>
+<p>
+La correcta carga de la documentación requerida permitirá continuar con el flujo de la solicitud.
+</p>
+
+<img src="img/Imagen12.png" alt="Imagen12">
+
+<div class="step">Paso 4: Validación de Areas</div>
+<p>
+En esta etapa se realiza la carga de los documentos requeridos para la solicitud, los cuales se encuentran organizados por equipo, facilitando la identificación de las responsabilidades asociadas a cada área.
+</p>
+
+<p>
+Cada documento cuenta con una etiqueta que indica su carácter: obligatorio, opcional o condicional. Los documentos condicionales se habilitarán únicamente cuando apliquen según las características del requerimiento ingresado.
+</p>
+
+<p>
+La correcta carga de la documentación requerida permitirá continuar con el flujo de la solicitud.
+</p>
+<img src="img/Imagen13.png" alt="Imagen13">
+
+<!-- BOTÓN VOLVER -->
+<div class="btn" 
+onclick="go('proveedores')">← Volver</div>
+
+</div>
+
+<!-- Otros / Terceros -->
+<div id="terceros" class="section">
+
+<h2>Otros / Terceros</h2>
+
+<div class="btn" onclick="go('t7')">Relaciones Comerciales</div>
+<div class="btn" onclick="go('t8')">Relaciones Institucionales</div>
+<div class="btn" onclick="go('t9')">Prueba de Concepto y Colaboración</div>
+<div class="btn" onclick="go('t10')">Donación y Otros pagos</div>
+
+<div class="btn volver" onclick="go('nueva')">← Volver</div>
+</div>
+
+<!-- TIPOLOGIA 7 -->
+<div id="t7" class="section">
+
+<h2>Relaciones Comerciales</h2>
+
+<div class="step">Paso 1: Completar datos</div>
+<p>
+En esta pantalla se deben completar los datos solicitados en la sección “Detalles de la prestación”. Es obligatorio ingresar toda la información requerida, ya que de lo contrario no será posible avanzar a la siguiente etapa del proceso.
+<img src="img/Imagen32.png" alt="Imagen32">
+</p>
+
+<p>
+Se debe indicar si es dueño del servicio solicitado, seleccionar la o las sociedades en las que el servicio es requerido, elegir el tipo de servicio según clasificación CMF, ingresar una descripción que detalle el alcance y objetivos del servicio, y definir el monto asociado al contrato. Una vez completados estos campos, se habilita el avance hacia la siguiente etapa.
+</p>
+
+<div class="step">Paso 2: Selección y validación del proveedor</div>
+<p>
+Al avanzar, se deberá ingresar el RUT del proveedor. En caso de que el proveedor no se encuentre registrado, se deberá seleccionar la opción de agregar (+), lo que permitirá crear un nuevo proveedor. Si el proveedor ya existe, se podrá buscar por nombre o RUT, seleccionarlo y continuar con el proceso.
+<img src="img/Imagen7.png" alt="Imagen7">
+</p>
+
+<p>
+Y al seleccionarlo se informará si el proveedor mantiene Due Diligence vigente o no:
+</p>
+<img src="img/Imagen8.png" alt="Imagen8">
+<p>
+Y al seleccionarlo aparecerá de la siguiente forma:
+</p>
+<img src="img/Imagen9.png" alt="Imagen9">
+<p>
+Posteriormente, se deberán responder las preguntas asociadas a la evaluación de riesgo operacional.
+</p>
+<img src="img/Imagen10.png" alt="Imagen10">
+<p>
+Luego de esto al presionar continuar aparecerá la siguiente pestaña, para indicar que el proceso debe pasar por la revisión de R. O
+</p>
+<img src="img/Imagen11.png" alt="Imagen11">
+
+<div class="step">Paso 3: Carga de Documentos</div>
+<p>
+En esta etapa se realiza la carga de los documentos requeridos para la solicitud, los cuales se encuentran organizados por equipo, facilitando la identificación de las responsabilidades asociadas a cada área.
+</p>
+
+<p>
+Cada documento cuenta con una etiqueta que indica su carácter: obligatorio, opcional o condicional. Los documentos condicionales se habilitarán únicamente cuando apliquen según las características del requerimiento ingresado.
+</p>
+<p>
+La correcta carga de la documentación requerida permitirá continuar con el flujo de la solicitud.
+</p>
+
+<img src="img/Imagen12.png" alt="Imagen12">
+
+<div class="step">Paso 4: Validación de Areas</div>
+<p>
+En esta etapa se realiza la carga de los documentos requeridos para la solicitud, los cuales se encuentran organizados por equipo, facilitando la identificación de las responsabilidades asociadas a cada área.
+</p>
+
+<p>
+Cada documento cuenta con una etiqueta que indica su carácter: obligatorio, opcional o condicional. Los documentos condicionales se habilitarán únicamente cuando apliquen según las características del requerimiento ingresado.
+</p>
+
+<p>
+La correcta carga de la documentación requerida permitirá continuar con el flujo de la solicitud.
+</p>
+<img src="img/Imagen13.png" alt="Imagen13">
+
+<!-- BOTÓN VOLVER -->
+<div class="btn" 
+onclick="go('terceros')">← Volver</div>
+
+</div>
+
+<!-- TIPOLOGIA 8 -->
+<div id="t8" class="section">
+
+<h2>Relaciones Institucionales</h2>
+
+<div class="step">Paso 1: Completar datos</div>
+<p>
+En esta pantalla se deben completar los datos solicitados en la sección “Detalles de la prestación”. Es obligatorio ingresar toda la información requerida, ya que de lo contrario no será posible avanzar a la siguiente etapa del proceso.
+<img src="img/Imagen33.png" alt="Imagen33">
+</p>
+
+<p>
+Se debe indicar si es dueño del servicio solicitado, seleccionar la o las sociedades en las que el servicio es requerido, elegir el tipo de servicio según clasificación CMF, ingresar una descripción que detalle el alcance y objetivos del servicio, y definir el monto asociado al contrato. Una vez completados estos campos, se habilita el avance hacia la siguiente etapa.
+</p>
+
+<div class="step">Paso 2: Selección y validación del proveedor</div>
+<p>
+Al avanzar, se deberá ingresar el RUT del proveedor. En caso de que el proveedor no se encuentre registrado, se deberá seleccionar la opción de agregar (+), lo que permitirá crear un nuevo proveedor. Si el proveedor ya existe, se podrá buscar por nombre o RUT, seleccionarlo y continuar con el proceso.
+<img src="img/Imagen7.png" alt="Imagen7">
+</p>
+
+<p>
+Y al seleccionarlo se informará si el proveedor mantiene Due Diligence vigente o no:
+</p>
+<img src="img/Imagen8.png" alt="Imagen8">
+<p>
+Y al seleccionarlo aparecerá de la siguiente forma:
+</p>
+<img src="img/Imagen9.png" alt="Imagen9">
+<p>
+Posteriormente, se deberán responder las preguntas asociadas a la evaluación de riesgo operacional.
+</p>
+<img src="img/Imagen10.png" alt="Imagen10">
+<p>
+Luego de esto al presionar continuar aparecerá la siguiente pestaña, para indicar que el proceso debe pasar por la revisión de R. O
+</p>
+<img src="img/Imagen11.png" alt="Imagen11">
+
+<div class="step">Paso 3: Carga de Documentos</div>
+<p>
+En esta etapa se realiza la carga de los documentos requeridos para la solicitud, los cuales se encuentran organizados por equipo, facilitando la identificación de las responsabilidades asociadas a cada área.
+</p>
+
+<p>
+Cada documento cuenta con una etiqueta que indica su carácter: obligatorio, opcional o condicional. Los documentos condicionales se habilitarán únicamente cuando apliquen según las características del requerimiento ingresado.
+</p>
+<p>
+La correcta carga de la documentación requerida permitirá continuar con el flujo de la solicitud.
+</p>
+
+<img src="img/Imagen12.png" alt="Imagen12">
+
+<div class="step">Paso 4: Validación de Areas</div>
+<p>
+En esta etapa se realiza la carga de los documentos requeridos para la solicitud, los cuales se encuentran organizados por equipo, facilitando la identificación de las responsabilidades asociadas a cada área.
+</p>
+
+<p>
+Cada documento cuenta con una etiqueta que indica su carácter: obligatorio, opcional o condicional. Los documentos condicionales se habilitarán únicamente cuando apliquen según las características del requerimiento ingresado.
+</p>
+
+<p>
+La correcta carga de la documentación requerida permitirá continuar con el flujo de la solicitud.
+</p>
+<img src="img/Imagen13.png" alt="Imagen13">
+
+<!-- BOTÓN VOLVER -->
+<div class="btn" 
+onclick="go('terceros')">← Volver</div>
+
+</div>
+
+<!-- TIPOLOGIA 9 -->
+<div id="t9" class="section">
+
+<h2>Prueba de Conceptos y Colaboración</h2>
+
+<div class="step">Paso 1: Completar datos</div>
+<p>
+En esta pantalla se deben completar los datos solicitados en la sección “Detalles de la prestación”. Es obligatorio ingresar toda la información requerida, ya que de lo contrario no será posible avanzar a la siguiente etapa del proceso.
+<img src="img/Imagen34.png" alt="Imagen34">
+</p>
+
+<p>
+Se debe indicar si es dueño del servicio solicitado, seleccionar la o las sociedades en las que el servicio es requerido, elegir el tipo de servicio según clasificación CMF, ingresar una descripción que detalle el alcance y objetivos del servicio, y definir el monto asociado al contrato. Una vez completados estos campos, se habilita el avance hacia la siguiente etapa.
+</p>
+
+<div class="step">Paso 2: Selección y validación del proveedor</div>
+<p>
+Al avanzar, se deberá ingresar el RUT del proveedor. En caso de que el proveedor no se encuentre registrado, se deberá seleccionar la opción de agregar (+), lo que permitirá crear un nuevo proveedor. Si el proveedor ya existe, se podrá buscar por nombre o RUT, seleccionarlo y continuar con el proceso.
+<img src="img/Imagen7.png" alt="Imagen7">
+</p>
+
+<p>
+Y al seleccionarlo se informará si el proveedor mantiene Due Diligence vigente o no:
+</p>
+<img src="img/Imagen8.png" alt="Imagen8">
+<p>
+Y al seleccionarlo aparecerá de la siguiente forma:
+</p>
+<img src="img/Imagen9.png" alt="Imagen9">
+<p>
+Posteriormente, se deberán responder las preguntas asociadas a la evaluación de riesgo operacional.
+</p>
+<img src="img/Imagen10.png" alt="Imagen10">
+<p>
+Luego de esto al presionar continuar aparecerá la siguiente pestaña, para indicar que el proceso debe pasar por la revisión de R. O
+</p>
+<img src="img/Imagen11.png" alt="Imagen11">
+
+<div class="step">Paso 3: Carga de Documentos</div>
+<p>
+En esta etapa se realiza la carga de los documentos requeridos para la solicitud, los cuales se encuentran organizados por equipo, facilitando la identificación de las responsabilidades asociadas a cada área.
+</p>
+
+<p>
+Cada documento cuenta con una etiqueta que indica su carácter: obligatorio, opcional o condicional. Los documentos condicionales se habilitarán únicamente cuando apliquen según las características del requerimiento ingresado.
+</p>
+<p>
+La correcta carga de la documentación requerida permitirá continuar con el flujo de la solicitud.
+</p>
+
+<img src="img/Imagen12.png" alt="Imagen12">
+
+<div class="step">Paso 4: Validación de Areas</div>
+<p>
+En esta etapa se realiza la carga de los documentos requeridos para la solicitud, los cuales se encuentran organizados por equipo, facilitando la identificación de las responsabilidades asociadas a cada área.
+</p>
+
+<p>
+Cada documento cuenta con una etiqueta que indica su carácter: obligatorio, opcional o condicional. Los documentos condicionales se habilitarán únicamente cuando apliquen según las características del requerimiento ingresado.
+</p>
+
+<p>
+La correcta carga de la documentación requerida permitirá continuar con el flujo de la solicitud.
+</p>
+<img src="img/Imagen13.png" alt="Imagen13">
+
+<!-- BOTÓN VOLVER -->
+<div class="btn" 
+onclick="go('terceros')">← Volver</div>
+
+</div>
+
+<!-- TIPOLOGIA 10 -->
+<div id="t10" class="section">
+
+<h2>Donaciones y Otros Pagos</h2>
+
+<div class="step">Paso 1: Completar datos</div>
+<p>
+En esta pantalla se deben completar los datos solicitados en la sección “Detalles de la prestación”. Es obligatorio ingresar toda la información requerida, ya que de lo contrario no será posible avanzar a la siguiente etapa del proceso.
+<img src="img/Imagen39.png" alt="Imagen39">
+</p>
+
+<p>
+Se debe indicar si es dueño del servicio solicitado, seleccionar la o las sociedades en las que el servicio es requerido, elegir el tipo de servicio según clasificación CMF, ingresar una descripción que detalle el alcance y objetivos del servicio, y definir el monto asociado al contrato. Una vez completados estos campos, se habilita el avance hacia la siguiente etapa.
+</p>
+
+<div class="step">Paso 2: Selección y validación del proveedor</div>
+<p>
+Al avanzar, se deberá ingresar el RUT del proveedor. En caso de que el proveedor no se encuentre registrado, se deberá seleccionar la opción de agregar (+), lo que permitirá crear un nuevo proveedor. Si el proveedor ya existe, se podrá buscar por nombre o RUT, seleccionarlo y continuar con el proceso.
+<img src="img/Imagen7.png" alt="Imagen7">
+</p>
+
+<p>
+Y al seleccionarlo se informará si el proveedor mantiene Due Diligence vigente o no:
+</p>
+<img src="img/Imagen8.png" alt="Imagen8">
+<p>
+Y al seleccionarlo aparecerá de la siguiente forma:
+</p>
+<img src="img/Imagen9.png" alt="Imagen9">
+<p>
+Posteriormente, se deberán responder las preguntas asociadas a la evaluación de riesgo operacional.
+</p>
+<img src="img/Imagen10.png" alt="Imagen10">
+<p>
+Luego de esto al presionar continuar aparecerá la siguiente pestaña, para indicar que el proceso debe pasar por la revisión de R. O
+</p>
+<img src="img/Imagen11.png" alt="Imagen11">
+
+<div class="step">Paso 3: Carga de Documentos</div>
+<p>
+En esta etapa se realiza la carga de los documentos requeridos para la solicitud, los cuales se encuentran organizados por equipo, facilitando la identificación de las responsabilidades asociadas a cada área.
+</p>
+
+<p>
+Cada documento cuenta con una etiqueta que indica su carácter: obligatorio, opcional o condicional. Los documentos condicionales se habilitarán únicamente cuando apliquen según las características del requerimiento ingresado.
+</p>
+<p>
+La correcta carga de la documentación requerida permitirá continuar con el flujo de la solicitud.
+</p>
+
+<img src="img/Imagen12.png" alt="Imagen12">
+
+<div class="step">Paso 4: Validación de Areas</div>
+<p>
+En esta etapa se realiza la carga de los documentos requeridos para la solicitud, los cuales se encuentran organizados por equipo, facilitando la identificación de las responsabilidades asociadas a cada área.
+</p>
+
+<p>
+Cada documento cuenta con una etiqueta que indica su carácter: obligatorio, opcional o condicional. Los documentos condicionales se habilitarán únicamente cuando apliquen según las características del requerimiento ingresado.
+</p>
+
+<p>
+La correcta carga de la documentación requerida permitirá continuar con el flujo de la solicitud.
+</p>
+<img src="img/Imagen13.png" alt="Imagen13">
+
+<!-- BOTÓN VOLVER -->
+<div class="btn" 
+onclick="go('terceros')">← Volver</div>
+</div>
+
+
+<!-- MIS SOLICITUDES -->
+<div id="mis" class="section">
+
+<div class="card">
+
+<h2>Mis Solicitudes</h2>
+
+<p>
+El módulo <b>“Mis Solicitudes”</b> permite al usuario visualizar y hacer seguimiento a todas las solicitudes que ha ingresado en el portal.
+</p>
+
+<p>
+En esta sección, se presenta un resumen de cada solicitud, donde se incluyen los principales datos asociados, tales como:
+</p>
+
+<ul>
+<li>ID de la solicitud</li>
+<li>Fecha de creación</li>
+<li>Estado (pendiente, en revisión, aprobada, rechazada, entre otros)</li>
+<li>Sociedad o entidad asociada</li>
+<li>Tipología de la solicitud</li>
+<li>Información relevante ingresada durante el proceso</li>
+</ul>
+
+<p>
+El usuario puede utilizar esta vista para monitorear el avance de sus solicitudes,
+identificando en qué etapa del proceso se encuentran y si requieren alguna acción adicional.
+</p>
+
+<p>
+Adicionalmente, esta sección permite revisar el detalle completo de cada solicitud,
+incluyendo la información ingresada, los documentos adjuntos y el estado de validación por parte de las distintas áreas involucradas.
+</p>
+
+<p>
+De esta forma, el módulo facilita el control y seguimiento de los requerimientos,
+entregando visibilidad total sobre el estado y evolución de cada solicitud dentro del portal.
+</p>
+<img src="img/Imagen37.png" alt="Imagen37">
+</div>
+
+</div>
+
+<!-- CONSULTA -->
+<div id="consulta" class="section">
+
+<div class="card">
+
+<h2>Consulta tu Proveedor</h2>
+
+<p>
+El módulo <b>“Consulta tu Proveedor”</b> permite al usuario acceder y revisar la información relevante de los proveedores registrados en el portal.
+</p>
+
+<p>
+A través de esta funcionalidad, el usuario puede buscar un proveedor utilizando datos como el nombre o RUT, obteniendo de forma rápida y centralizada el estado y los antecedentes asociados.
+</p>
+
+<p>
+En esta sección se visualiza información clave del proveedor, incluyendo:
+</p>
+
+<ul>
+<li>Estado del proceso de Due Diligence</li>
+<li>Fecha de vencimiento de la evaluación</li>
+<li>Información general del proveedor</li>
+<li>Servicios asociados por sociedad o entidad</li>
+</ul>
+<img src="img/Imagen36.png" alt="Imagen36">
+<p>
+Esta vista permite al usuario conocer si un proveedor se encuentra habilitado para operar,
+si su evaluación está vigente o si requiere actualización de información.
+</p>
+
+<p>
+Asimismo, facilita la toma de decisiones al entregar visibilidad sobre el estado de evaluación del proveedor, asegurando que los procesos se realicen con información actualizada y validada.
+</p>
+
+<p>
+De esta manera, el módulo contribuye a una gestión más segura y eficiente de los terceros,
+permitiendo consultar de forma rápida y confiable toda la información relevante antes de iniciar o continuar un proceso.
+</p>
+
+</div>
+
+</div>
+
+<!-- APROBACIONES -->
+<div id="aprobaciones" class="section">
+<div class="card">
+<h2>Mis Aprobaciones</h2>
+
+<p>
+El módulo <b>“Mis Aprobaciones”</b> está dirigido a los usuarios que cuentan con rol aprobador 
+y permite gestionar las solicitudes que requieren su revisión dentro del portal.
+</p>
+
+<p>
+En esta sección, el usuario puede visualizar todas las solicitudes pendientes de aprobación, 
+así como también aquellas que ya han sido revisadas, aprobadas, rechazadas o que presentan algún tipo de observación.
+</p>
+<img src="img/Imagen35.png" alt="Imagen35">
+
+<p>
+La vista principal presenta un resumen del estado de las solicitudes, permitiendo identificar rápidamente:
+</p>
+
+<ul>
+<li>Solicitudes pendientes de aprobación</li>
+<li>Solicitudes en revisión</li>
+<li>Solicitudes aprobadas</li>
+<li>Solicitudes rechazadas</li>
+<li>Solicitudes vencidas</li>
+</ul>
+
+<p>
+Al ingresar a una solicitud en particular, el aprobador puede revisar el detalle completo de la información ingresada,
+incluyendo los datos del proveedor, los documentos asociados y el estado de validación de las distintas áreas participantes.
+</p>
+
+<p>
+Además, el sistema permite al aprobador realizar las siguientes acciones:
+</p>
+
+<ul>
+<li><b>Aprobar:</b> validar la solicitud y permitir que continúe el flujo</li>
+<li><b>Rechazar:</b> detener el proceso indicando el motivo correspondiente</li>
+<li><b>Solicitar corrección:</b> devolver la solicitud para ajustes o información adicional</li>
+</ul>
+<img src="img/Imagen38.png" alt="Imagen38">
+<p>
+El proceso de aprobación puede realizarse directamente desde el portal o a través de notificaciones enviadas por Microsoft Teams,
+facilitando la gestión y respuesta oportuna de las solicitudes.
+</p>
+<img src="img/Imagen14.png" alt="Imagen14">
+<p>
+De esta manera, este módulo permite mantener el control del proceso de aprobación, 
+asegurando que cada solicitud sea evaluada correctamente antes de su cierre.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
